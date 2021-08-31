@@ -193,3 +193,11 @@ user:
 first_name: John
 last_name: Doe
 ```
+
+### 2.2 scan.sh
+
+```bash
+docker run -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=**** -e MYSQL_DATABASE=mySchema mysql:5
+
+sudo mysql -h localhost -P 3306 --protocol=tcp -u root -p
+```
