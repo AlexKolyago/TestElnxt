@@ -75,10 +75,7 @@ curl -O https://wordpress.org/latest.tar.gz
 tar xzvf latest.tar.gz
 
 cp ~/wordpress/wp-config-sample.php ~/wordpress/wp-config.php
-```
-Some changes on the photo.
 
-```bash
 sudo cp -a ~/wordpress/* /var/www/html
 sudo chown -R www-data:www-data /var/www/html
 ```
@@ -168,3 +165,31 @@ sudo ufw allow 10050/tcp
 
 ------
 
+## Task 2.
+
+### 2.1 script.sh
+
+```bash
+➜  Elinext git:(master) ✗ bash script.sh input.yml -F Vasya -L Pupkin
+host:
+  hostname: alex-HP
+  ip: 192.168.100.4
+date: 04:20:00 31.08.2021
+user:
+  home_folder: /home/alex
+  username: alex
+first_name: Vasya
+last_name: Pupkin
+
+
+➜  Elinext git:(master) ✗ bash script.sh input.yml                   
+host:
+  hostname: alex-HP
+  ip: 192.168.100.4
+date: 04:20:07 31.08.2021
+user:
+  home_folder: /home/alex
+  username: alex
+first_name: John
+last_name: Doe
+```
