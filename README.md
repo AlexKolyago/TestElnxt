@@ -196,8 +196,30 @@ last_name: Doe
 
 ### 2.2 scan.sh
 
+Сontainer creation with MySQL DB
+
 ```bash
 docker run -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=**** -e MYSQL_DATABASE=mySchema mysql:5
 
 sudo mysql -h localhost -P 3306 --protocol=tcp -u root -p
 ```
+
+Script execution
+
+```bash
+➜  Elinext git:(master) ✗ bash scan.sh /home/alex/Загрузки -H localhost -P 3306 -D test -U root -p ****
+mysql: [Warning] Using a password on the command line interface can be insecure.
+➜  Elinext git:(master) ✗ 
+```
+~~~~sql
+mysql> SELECT * FROM test;
++--------------------------------------------------------------------------------------------------------+
+| files                                                                                                  |
++--------------------------------------------------------------------------------------------------------+
+| zoom_0 (1).mp4                                                                                         |
+| /home/alex/Загрузки/zoom_0 (1).mp4                                                                     |
+| 178M                                                                                                   |
+|...                                                                                                     |
++--------------------------------------------------------------------------------------------------------+
+226 rows in set (0,00 sec)
+~~~~
